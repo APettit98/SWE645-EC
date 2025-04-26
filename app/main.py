@@ -54,7 +54,7 @@ def delete_survey_by_id(survey_id:int, db:Session=Depends(getDB)):
         raise HTTPException(status_code=404, detail=str(e))
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
-    return res
+    return "Success"
 
 @app.put("/api/surveys/{survey_id}")
 def update_survey_by_id(survey:schemas.SurveyCreate, survey_id:int, db:Session=Depends(getDB)):
